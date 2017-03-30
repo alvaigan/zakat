@@ -11,12 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-		
-		$data = [
-			"nama_kelas" => "XII-RPL1",
-			"jurusan" 	 => "Rekayasa Perangkat Lunak"
-		];
-		DB::table('t_kelas')->insert($data);
+      $this->call(AdminSeeder::class);
     }
 }

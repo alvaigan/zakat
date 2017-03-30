@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AdminController@index');
+Route::get('/uang/tambah', 'AdminController@create');
+Route::post('/uang/add', 'AdminController@store');
 
-Route::get('/kelas', 'KelasController@index');
-Route::get('/kelas/add', 'KelasController@create');
+Route::get('/uang/{id}/tambah', 'AdminController@edit');
+Route::patch('/uang/{id}/tambah', 'AdminController@update');

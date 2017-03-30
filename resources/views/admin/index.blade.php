@@ -1,37 +1,60 @@
+@extends('template/header')
+
+@section('content')
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Blank page
-    <small>it all starts here</small>
+    Daftar Muzaki <small>Zakat Uang</small>
   </h1>
-  <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-    <li><a href="#">Examples</a></li>
-    <li class="active">Blank page</li>
-  </ol>
+  @include('template/feedback')
 </section>
 
-<!-- Main content -->
 <section class="content">
-
-  <!-- Default box -->
   <div class="box">
-    <div class="box-header with-border">
-      <h3 class="box-title">Title</h3>
 
-      <div class="box-tools pull-right">
-        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-          <i class="fa fa-minus"></i></button>
-        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-          <i class="fa fa-times"></i></button>
-      </div>
-    </div>
     <div class="box-body">
-      Start creating your amazing application!
+      <a href="{{url('uang/tambah')}}" class="btn btn-success"><i class="fa fa-plus-circle"></i>&nbsp;&nbsp;Tambah</a>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Tanggal</th>
+            <th>Nama Muzaki</th>
+            <th>RT</th>
+            <th>Jumlah Jiwa</th>
+            <th>Jumlah Uang</th>
+            <th>Foto</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @foreach ($result as $row)
+          <tr>
+            <td>{{ !empty($i) ? ++$i : $i = 1}}</td>
+            <td>{{$row->tanggal}}</td>
+            <td>{{$row->nama_muzaqi}}</td>
+            <td>{{$row->rt}}</td>
+            <td>{{$row->jiwa}}</td>
+            <td>{{$row->jumlah_uang}}</td>
+            <td>{{$row->foto}}</td>
+            <td>
+                <a href="{{ url("uang/$row->id_muzaqi/edit") }}" class="btn btn-warning"><i class="fa fa-pencil"></i></a>
+                <form action="{{ url("uang/$row->id_muzaqi/delete")}}" method="post" style="display:inline">
+                  {{ csrf_field() }}
+                  {{ method_field('DELETE') }}
+                  <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                </form>
+            </td>
+          </tr>
+          @endforeach
+        </tbody>
+      </table>
     </div>
     <!-- /.box-body -->
     <div class="box-footer">
-      Footer
+      &copy  SMKN 4 Bandung
     </div>
     <!-- /.box-footer-->
   </div>
@@ -39,3 +62,4 @@
 
 </section>
 <!-- /.content -->
+@endsection
