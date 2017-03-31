@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <h1>
-    Form {{ empty($result) ? 'Tambah' : 'Edit' }} Muzaki <small>Zakat Uang</small>
+    Form {{ empty($result) ? 'Tambah' : 'Edit' }} Muzaki <small>Zakat Beras</small>
   </h1>
   @include('template/feedback')
 </section>
@@ -12,8 +12,8 @@
 <section class="content">
   <div class="box">
     <div class="box-body">
-      <a href="{{url('/')}}" class="btn btn-primary"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Kembali</a>
-      <form class="form-horizontal" action="{{ empty($result) ? url("uang/add") : url("uang/$result->id_muzaqi/edit") }}" method="post" enctype="multipart/form-data">
+      <a href="{{url('/beras')}}" class="btn btn-primary"><i class="fa fa-chevron-left"></i>&nbsp;&nbsp;Kembali</a>
+      <form class="form-horizontal" action="{{ empty($result) ? url("beras/add") : url("beras/$result->id_muzaqi/edit") }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
 
         @if (!empty($result))
@@ -43,7 +43,7 @@
 
         <div class="form-group">
           <label class="control-label col-sm-2">Jumlah Jiwa</label>
-          <div class="col-sm-4">
+          <div class="col-sm-5">
             <div class="input-group">
               <input type="number" name="jiwa" class="form-control" placeholder="Masukkan Jumlah Jiwa" value="{{ @$result->jiwa }}" />
               <span class="input-group-addon">Orang</span>
@@ -52,11 +52,11 @@
         </div>
 
         <div class="form-group">
-          <label class="control-label col-sm-2">Jumlah Uang</label>
+          <label class="control-label col-sm-2">Jumlah beras</label>
           <div class="col-sm-3">
             <div class="input-group">
-              <span class="input-group-addon">Rp</span>
-              <input type="number" name="jumlah_uang" class="form-control" placeholder="Masukkan Jumlah Uang" value="{{ @$result->jumlah_uang }}" />
+              <input type="text" name="jumlah_beras" class="form-control" placeholder="Masukkan Jumlah Beras" value="{{ @$result->jumlah_beras }}" />
+              <span class="input-group-addon">Kg</span>
             </div>
           </div>
         </div>
