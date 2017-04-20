@@ -101,8 +101,8 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN DATA</li>
 
-        <li><a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ url('/uang') }}"><i class="fa fa-dollar"></i> <span>Daftar Muzaki Zakat Uang</span></a></li>
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="{{ url('/uang') }}"><i class="fa fa-dollar"></i><span>Daftar Muzaki Zakat Uang</span></a></li>
         <li><a href="{{ url('/beras') }}"><i class="fa fa-leaf"></i> <span>Daftar Muzaki Zakat Beras</span></a></li>
         <li><a href="{{ url('/tentang') }}"><i class="fa fa-font"></i> <span>Tentang</span></a></li>
 

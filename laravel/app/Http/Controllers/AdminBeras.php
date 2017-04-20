@@ -23,8 +23,7 @@ class AdminBeras extends Controller
       'nama_muzaqi' => 'required|max:100',
       'rt' => 'required|max:100',
       'jiwa' => 'required|max:100',
-      'jumlah_beras' => 'required|max:100',
-      'foto' => 'required|mimes:jpeg,png|max:512'
+      'jumlah_beras' => 'required|max:100'
     ];
     $this->validate($request, $rules);
 

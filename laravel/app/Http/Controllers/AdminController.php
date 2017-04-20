@@ -38,8 +38,8 @@ class AdminController extends Controller
 
       $status = \App\Muzaqi_uang::create($input);
 
-      if ($status) return redirect('/')->with('success', 'Data berasil ditambahkan');
-      else return redirect('/')->with('error', 'Data gagal ditambahkan');
+      if ($status) return redirect('/uang')->with('success', 'Data berasil ditambahkan');
+      else return redirect('/uang')->with('error', 'Data gagal ditambahkan');
     }
 
     public function edit($id)
@@ -79,7 +79,7 @@ class AdminController extends Controller
       $result = \App\Muzaqi_uang::where('id_muzaqi', $id)->first();
       $status = $result->delete();
 
-      if ($status) return redirect('/')->with('success', 'Data berasil dihapus');
-      else return redirect('/')->with('error', 'Data gagal dihapus');
+      if ($status) return redirect('/uang')->with('success', 'Data berasil dihapus');
+      else return redirect('/uang')->with('error', 'Data gagal dihapus');
     }
 }

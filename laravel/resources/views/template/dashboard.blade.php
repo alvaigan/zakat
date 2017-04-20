@@ -16,7 +16,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{ $result_uang }}</h3>
 
               <p>Zakat Uang</p>
             </div>
@@ -31,7 +31,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
               <div class="inner">
-                <h3>150</h3>
+                <h3>{{ $result_beras }}</h3>
 
                 <p>Zakat Beras</p>
               </div>
